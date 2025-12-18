@@ -4,14 +4,20 @@ package com.banque.app.entities;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
+import java.util.Date;
+
 @Entity
 @DiscriminatorValue("CE")
 public class CompteEpargne extends Compte {
 
     private double taux ;
 
-    public CompteEpargne(Long codeCompte, double solde, Client client, double taux) {
-        super(codeCompte, solde, client);
+    public CompteEpargne() {
+
+    }
+
+    public CompteEpargne(String codeCompte, Date dateCreation, double solde, Client client, double taux) {
+        super(codeCompte, dateCreation, solde, client);
         this.taux = taux;
     }
 

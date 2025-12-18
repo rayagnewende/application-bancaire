@@ -9,7 +9,7 @@ import java.util.Date;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE_OP", discriminatorType = DiscriminatorType.STRING, length = 1)
 public abstract class Operation implements Serializable {
-
+    @Id @GeneratedValue
     private Long numero;
     private Date dateCreation;
     private double montant ;

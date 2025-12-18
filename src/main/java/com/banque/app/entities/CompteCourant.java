@@ -2,6 +2,8 @@ package com.banque.app.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @DiscriminatorValue("CC")
 public class CompteCourant extends Compte {
@@ -10,8 +12,9 @@ public class CompteCourant extends Compte {
     public CompteCourant() {
 
     }
-    public CompteCourant(Long codeCompte, double solde, Client client, double decouvert) {
-        super(codeCompte, solde, client);
+
+    public CompteCourant(String codeCompte, Date dateCreation, double solde, Client client, double decouvert) {
+        super(codeCompte, dateCreation, solde, client);
         this.decouvert = decouvert;
     }
 

@@ -10,8 +10,8 @@ import java.util.Date;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE_CPTE", discriminatorType = DiscriminatorType.STRING, length = 2)
 public abstract class Compte implements Serializable {
-    @Id @GeneratedValue
-    private Long codeCompte;
+    @Id
+    private String codeCompte;
     private Date dateCreation;
     private double solde ;
     @ManyToOne
@@ -23,17 +23,18 @@ public abstract class Compte implements Serializable {
     public Compte() {
     }
 
-    public Compte(Long codeCompte, double solde, Client client) {
+    public Compte(String codeCompte, Date dateCreation, double solde, Client client) {
         this.codeCompte = codeCompte;
+        this.dateCreation = dateCreation;
         this.solde = solde;
         this.client = client;
     }
 
-    public Long getCodeCompte() {
+    public String getCodeCompte() {
         return codeCompte;
     }
 
-    public void setCodeCompte(Long codeCompte) {
+    public void setCodeCompte(String codeCompte) {
         this.codeCompte = codeCompte;
     }
 
