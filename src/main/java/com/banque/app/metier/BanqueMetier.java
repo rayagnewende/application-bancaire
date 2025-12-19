@@ -6,9 +6,10 @@ import com.banque.app.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
-
+@Service
 public class BanqueMetier implements IBanqueMetier {
     @Autowired
     CompteRepository compteRepository;
